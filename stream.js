@@ -25,7 +25,7 @@ if (Meteor.isClient) {
     Meteor.call('token', (error, token) => {
       const feed = client.feed(FEED, PK, token);
 
-      feed.get({limit:5, offset:0}, (response) => {
+      feed.get({limit:5, offset:0}).catch((response) => {
         console.log(response);
         debugger;
       });
